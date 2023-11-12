@@ -11,7 +11,7 @@ const port = 3000
 app.get('/teste', (req, res) => 
     res
     .status(200)
-    .send({ message: 'oie'})
+    .send({ message: 'ssssss'})
 )
 
 app.listen(port, () => console.log(`server is running in port ${port}...`))
