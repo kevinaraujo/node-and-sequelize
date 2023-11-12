@@ -1,0 +1,30 @@
+version: '3.1'
+services:
+  node-app:
+    build: .
+    container_name: app
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - '3000:3000'
+
+  mysql-db:
+    image: mysql:5.7
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: sequelize-and-node
+    ports:
+      - "3306:3306"
+
+  sequelize-cli:
+    image: node:20.9.0
+    container_name: sequelize
+    depends_on:
+      - mysql-db
+    working_dir: /app
+    volumes:
+      - .:/app
