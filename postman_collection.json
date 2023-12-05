@@ -72,6 +72,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "People - update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Joazinho Souzas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/people/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"people",
+						"16"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
