@@ -6,7 +6,8 @@ I used here a docker-compose to handle the containers.
 
 Run on root folder:
 
-`docker-compose up -d`
+- `npm install`
+- `docker-compose up -d`
 
 
 ## Testing API:
