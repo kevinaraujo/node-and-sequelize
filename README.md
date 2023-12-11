@@ -9,8 +9,14 @@ Run on root folder:
 - `npm install`
 - `docker-compose up -d`
 
+## Creating Database
 
-## Testing API:
+Create a new database `english_school` on mysql container and then run this commands on `/api` folder:
+
+- `npx sequelize-cli db:migrate` to create all tables
+- `npx sequelize-cli db:seed:all` to populate the table with data
+
+## Testing API
 
 import the `postman_collection.json` file to postman app.
 
