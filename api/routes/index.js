@@ -1,9 +1,15 @@
 const bodyParser = require('body-parser')
-const peopleRotue = require('./peopleRoute') 
+const peopleRoute = require('./peopleRoute') 
+const levelsRoute = require('./levelsRoute') 
+const classesRoute = require('./classesRoute') 
 
 module.exports = app => {
-    app.use(bodyParser.json())
-    app.use(peopleRotue)
+    app.use(
+        bodyParser.json(),
+        peopleRoute,
+        levelsRoute,
+        classesRoute
+    )
 
     app.get('/', (req, res) => res.send('ok'))
     app.get('/health-check', (req, res) => 
