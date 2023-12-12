@@ -101,6 +101,63 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "health-check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/health-check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"health-check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Classes - get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/classes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"classes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Levels - get all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/levels",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"levels"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
