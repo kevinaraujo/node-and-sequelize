@@ -102,6 +102,27 @@ class PersonController {
 
         }
     }
+
+    static async getRegistration(req, res) {
+        try {
+            const { studentId, registrationId } = req.params;
+
+            const data = await db.Registrations.findOne({
+                where: {
+                    id: Number(registrationId),
+                    student_id: Number(studentId)
+                }
+            })
+
+            return res
+                .status(200)
+                .json(data)
+        } catch(err) {
+            return res
+                .status(500)
+                .json(err.message)
+        }
+    }
 }
 
 module.exports = PersonController

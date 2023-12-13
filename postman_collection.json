@@ -158,6 +158,28 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Registration - get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/people/3/registration/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"people",
+						"3",
+						"registration",
+						"3"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
