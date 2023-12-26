@@ -180,6 +180,36 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Registration - create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\": \"confirmed\",\n    \"class_id\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/people/4/registration",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"people",
+						"4",
+						"registration"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

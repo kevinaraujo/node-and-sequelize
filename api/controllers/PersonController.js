@@ -1,3 +1,4 @@
+const { json } = require('body-parser')
 const db = require('../models')
 
 class PersonController {
@@ -100,6 +101,27 @@ class PersonController {
                 .status(500)
                 .json(err.message)
 
+        }
+    }
+
+    static async createRegistration(req, res) {
+        try {
+            const { studentId } = req.params
+            const body = { 
+                ...req.body, 
+                student_id: Number(studentId)
+            }
+
+            const newRegistration = await db.Registrations.create(body)
+
+            return res
+                .status(200)
+                .json(newRegistration)
+
+        } catch (err) {
+            return res
+                .status(500)
+                .json(err.message)
         }
     }
 
