@@ -145,6 +145,60 @@ class PersonController {
                 .json(err.message)
         }
     }
+
+    static async updateRegistration(req, res) {
+        try {
+
+            const { studentId, registrationId } = req.params;
+
+            await db.Registrations.update(req.body, {
+                where: {
+                    id: Number(registrationId),
+                    student_id: Number(studentId),
+                }
+            })
+
+            const data = await db.Registrations.findOne({
+                where: {
+                    id: Number(registrationId)
+                }
+            })
+
+            return res
+                .status(200)
+                .json(data)
+
+        } catch (err) {
+            return res
+                .status(500)
+                .json(err.message)
+        }
+    }
+
+    static async deleteRegistration(req, res) {
+        try {
+
+            const { studentId, registrationId } = req.params;
+
+            await db.Registrations.destroy({
+                where: {
+                   id: Number(registrationId),
+                   student_id: Number(studentId) 
+                }
+            })
+
+            return res
+                .status(200)
+                .json({
+                    message: `id ${registrationId} deleted`
+                })
+
+        } catch (err) {
+            return res
+                .status(500)
+                .json(err.message)
+        }
+    }
 }
 
 module.exports = PersonController
